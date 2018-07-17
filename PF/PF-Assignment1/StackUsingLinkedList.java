@@ -1,3 +1,8 @@
+/*
+ * Node class contains node in which data is stored as int in data
+ *  as well as pointer to next Node is stored
+ */
+
 class Node{
 	
 	private int data;
@@ -25,12 +30,16 @@ class Node{
 	}
 }
 
-class Stack1{
+/*
+ *  Implementation of Stack using linked list in O(1) time constant
+ */
+
+class StackLinkedList{
 	
 	private Node topElement;
 	private int size;
 	
-	Stack1(){
+	StackLinkedList(){
 		topElement = null;
 		size = 0;
 	}
@@ -46,16 +55,24 @@ class Stack1{
 		size++;
 	}
 	
-	public int pop(){
-		int topValue = topElement.getData();
-		topElement = topElement.getNext();
-		size--;
-		return topValue;
+	public int pop() throws StackException{
+		if(isEmpty()){
+			throw new StackException("Stack Underflow");
+		} else{
+			int topValue = topElement.getData();
+			topElement = topElement.getNext();
+			size--;
+			return topValue;
+		}
 	}
 	
-	public int Top(){
-		int topValue = topElement.getData();
-		return topValue;
+	public int top() throws StackException{
+		if(isEmpty()){
+			throw new StackException("Stack Overflow");
+		} else {
+			int topValue = topElement.getData();
+			return topValue;
+		}
 	}
 	
 	public boolean isEmpty(){
@@ -63,12 +80,34 @@ class Stack1{
 	}
 }
 public class StackUsingLinkedList {
-	public static void main(String args[]){
-		Stack1 st = new Stack1();
-		st.push(9);
-		st.push(8);
-		System.out.println(st.pop());
-		System.out.println(st.Top());
-		System.out.println(st.isEmpty());
+	public static void main(String args[]) throws StackException{
+		StackLinkedList stack = new StackLinkedList();
+		try{
+		/*
+		 * Normal case: Covered
+		 */
+		 stack.push(9);
+		 stack.push(8);
+		 System.out.println(stack.pop());
+		 System.out.println(stack.top());
+		 System.out.println(stack.isEmpty());
+		  
+		 
+		/*
+		 * Empty Stack: Covered
+		 * stack.pop();
+		 */
+		
+		 /*
+		  * More pop() operations than pull : Covered
+		  * stack.push(1);
+		  * stack.pop();
+		  * stack.pop();
+		  */
+		}
+		catch (StackException e){
+			System.out.println("Error detected: " + e.getMessage() );
+	        System.exit(1);
+		}
 	}
 }

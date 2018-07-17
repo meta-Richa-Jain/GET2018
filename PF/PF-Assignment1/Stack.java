@@ -1,46 +1,53 @@
-import java.util.*;
-
 class StackUsingArray{
 	
-	private final int[] array;
+	private final int[] stackArray;
 	private int topIndex;
 	private final int size;
+	
+	/**
+	 * @param size 
+	 * creates array of length size with Index of the top element as -1
+	 */
 	
 	public StackUsingArray(final int size) {
 		// TODO Auto-generated constructor stub
 		topIndex = -1;
 		this.size = size;
-		array = new int[this.size];
+		stackArray = new int[this.size];
 	}
 	
-	public int top(){
-		int topElement = array[topIndex];
-		return topElement;
-	}
-	
-	public void push(final int number){
-		if(isSafe()){
-			topIndex++;
-			array[topIndex] = number;
-		}else{
-			System.out.println("Stack Overflow");
-		}	
-	}
-	
-	public int pop(){
-	//	assert topIndex > -1;
-		if(isSafe()){
-		int topElement = array[topIndex];
-		topIndex--;
-		return topElement;
+	public int top() throws StackException{
+		if(isEmpty()){
+			throw new StackException("Stack Underflow");
 		} else{
-			System.out.println("Stack Underflow");
-			return -1;
+			int topElement = stackArray[topIndex];
+			return topElement;
 		}
 	}
 	
+	public void push(final int number) throws StackException{
+		if(isSafe()){
+			topIndex++;
+			stackArray[topIndex] = number;
+		}else{
+			throw new StackException("Stack Overflow");
+		}	
+	}
+	
+	public int pop() throws StackException{
+		if(isEmpty()){
+			throw new StackException("Stack Underflow");
+		} else{
+			int topElement = stackArray[topIndex];
+			topIndex--;
+			return topElement;
+		}
+	}
+	
+	// checks if the current index is within the range
+	
 	boolean isSafe(){
-		return((topIndex >= -1 && topIndex < size)? true:false);	
+		return((topIndex >= -1 && topIndex < size) ? true:false);	
 	}
 	
 	boolean isEmpty(){
@@ -48,16 +55,40 @@ class StackUsingArray{
 	}
 }
 
+
 public class Stack {
 	
 	public static void main(String args[]){
 		
 		final int size = 100;
-		StackUsingArray st = new StackUsingArray(size);
-		st.push(8);
-		System.out.println(st.pop());
-		st.push(9);
-		System.out.println(st.top());
-		System.out.println(st.isEmpty());
+		StackUsingArray stack = new StackUsingArray(size);
+		try{
+		/*
+		 * Normal case: Covered
+		 */
+		 stack.push(9);
+		 stack.push(8);
+		 stack.pop();
+		 stack.pop();
+		 System.out.println(stack.pop());
+		 System.out.println(stack.top());
+		 System.out.println(stack.isEmpty());
+		}
+		 
+		/*
+		 * Empty Stack: Covered
+		 * stack.pop();
+		 */
+		
+		 /*
+		  * More pop() operations than pull : Covered
+		  * stack.push(1);
+		  * stack.pop();
+		  * stack.pop();
+		  */
+		 catch (StackException e){
+				System.out.println("Error detected: " + e.getMessage() );
+		        System.exit(1);
+		}
 	}
 }
