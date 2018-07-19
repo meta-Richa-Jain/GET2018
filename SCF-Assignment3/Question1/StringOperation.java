@@ -11,7 +11,7 @@ public class StringOperation {
 	 */
 	int compareString(String inputString1, String inputString2) {
 		String firstInputString = new String(inputString1);
-		String secondInputString = new String(inputString2);
+		String secondInputString = new String(inputString2); 
 		if (firstInputString.length() != secondInputString.length()) {
 			return 0;
 		} else {
@@ -74,15 +74,15 @@ public class StringOperation {
 		StringBuilder largestWord = new StringBuilder();
 		int intermediateWordLength = 0;
 		int maxLength = 0;
-		String intermediateWord ="";
+		StringBuilder intermediateWord =new StringBuilder();
 		for (int i = 0; i < inputString.length(); i++) {
 			if (inputString.charAt(i) != ' ') {
-				intermediateWord = intermediateWord + (inputString
+				intermediateWord = intermediateWord.append(inputString
 						.charAt(i));
 				intermediateWordLength++;
 			} else {
 				intermediateWordLength = 0;
-				intermediateWord = "";
+				intermediateWord = new StringBuilder();
 			}
 			if (maxLength <= intermediateWordLength) {
 				maxLength = intermediateWordLength;
@@ -91,4 +91,5 @@ public class StringOperation {
 		}
 		return largestWord.toString();
 	}
+	
 }
