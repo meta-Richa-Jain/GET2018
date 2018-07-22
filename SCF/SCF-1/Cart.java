@@ -42,34 +42,26 @@ class Cart{
 	 */
 	double generateReceiptWithPromo(String promo, int promoType)throws NullPointerException{
 		Promotions promoObject = null ;
-		if(promoType == 1){
-			promoObject = new FixedOrderPromotion();
-		} else if(promoType == 2){
-			//FixedProduct Promotion is only applicable on shoes
-			if(list.contains("shoes")){
-				promoObject = new FixedProductPromotion();
-			} else {
-				System.out.println("Sorry : promo not valid on selected items");
-				return totalPrice;
-			}
-		}
 		try{
+			if(promoType == 1){
+				promoObject = new FixedOrderPromotion();
+			} else if(promoType == 2){
+				//FixedProduct Promotion is only applicable on shoes
+				if(list.contains("shoes")){
+					promoObject = new FixedProductPromotion();
+				} else {
+					System.out.println("Sorry : promo not valid on selected items");
+					return totalPrice;
+				}
+			}
 			if(promoObject.isPromotionApplicable(promo, totalPrice)){
 				double discount = (promoObject.getFixedDiscount())*totalPrice;
 				totalPrice = totalPrice - discount;
 			}
-		}
-		catch(NullPointerException e){
+		} catch(NullPointerException e){
 			System.out.println(e.getMessage());
 		}
 		return totalPrice;
-	}
-	
-	/*
-	 * generate total biling amount without the promocode
-	 */
-	double generateReceipt(){
-		return getTotalPrice();
 	}
 	
 	/*
