@@ -7,7 +7,7 @@ public class FixedOrderPromotion implements Promotions{
 	public FixedOrderPromotion() {
 		// TODO Auto-generated constructor stub
 		this.setMinimumPrice(1000);
-		this.setFixedDiscount(5);
+		this.setFixedDiscount(.05);
 	}
 	@Override
 	public double getMinimumPrice() {
@@ -22,7 +22,7 @@ public class FixedOrderPromotion implements Promotions{
 
 	@Override
 	public double getFixedDiscount() {
-		return fixedDiscount/100;
+		return fixedDiscount;
 	}
 
 	@Override
