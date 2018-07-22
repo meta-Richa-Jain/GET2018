@@ -51,7 +51,7 @@ public class FixedProductPromotion implements Promotions{
 	/*
 	 * checks if the entered promo code is valid for today's date or not and 
 	 * there is sufficient amount of the cart so that the promo code can be used
-	 * @param promocode entered by the user and total biling price of the cart
+	 * @param promocode entered by the user and total billing price of the cart
 	 * @returns true if it is applicable else false 
 	 */
 	public boolean isPromotionApplicable(String promoCode, double price) {
