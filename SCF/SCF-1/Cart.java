@@ -36,7 +36,7 @@ class Cart{
 	}
 	
 	/*
-	 * to calculate final biling amount after discount with the correct promocode
+	 * to calculate final billing amount after discount with the correct promocode
 	 * @param promocode entered
 	 * @returns total amount to be paid at the time of checkout after discount 
 	 */
@@ -55,7 +55,9 @@ class Cart{
 				}
 			}
 			if(promoObject.isPromotionApplicable(promo, totalPrice)){
+				System.out.println("Billing Amount : " + totalPrice);
 				double discount = (promoObject.getFixedDiscount())*totalPrice;
+				System.out.println("            - Discount : " + discount);
 				totalPrice = totalPrice - discount;
 			}
 		} catch(NullPointerException e){
