@@ -8,7 +8,7 @@ public class SearchTest {
 	private int result;
 	
 	@Test
-	public void test1() {
+	public void testLinearSearchNumberPresent() {
 		
 		int searchArray[] = {1,3,2,4};
 		result = searchNum.linearSearch(searchArray, 3, 0);
@@ -16,23 +16,31 @@ public class SearchTest {
 	}
 	
 	@Test
-	public void test2() {
+	public void testLinearSearchNumberNotPresent() {
 		
 		int searchArray[] = {1,2,3,4};
 		result = searchNum.linearSearch(searchArray, 5, 0);
 		assertEquals(-1,result);
 	}
 	
-	@Test(expected = AssertionError.class) 
-	public void test3() {
+	@Test
+	public void testLinearSearchNumberPresentLastIndex() {
 		
-		int searchArray[] = {};
-		result = searchNum.linearSearch(searchArray, 2, 0);
-		assertNotEquals(2,result);
+		int searchArray[] = {1,2,3,4};
+		result = searchNum.linearSearch(searchArray, 4, 0);
+		assertEquals(3,result);
 	}
 	
 	@Test
-	public void test4() {
+	public void testLinearSearchEmptyArray() {
+		
+		int searchArray[] = {};
+		result = searchNum.linearSearch(searchArray, 2, 0);
+		assertEquals(-1,result);
+	}
+	
+	@Test
+	public void testBinarySearchNumberPresent() {
 		
 		int searchArray[] = {1,2,3,4};
 		result = searchNum.binarySearch(searchArray, 2, 0,searchArray.length);
@@ -40,27 +48,27 @@ public class SearchTest {
 	}
 	
 	@Test
-	public void test5() {
-		
-		int searchArray[] = {1,2,3,4};
-		result = searchNum.binarySearch(searchArray, 5, 0,searchArray.length);
-		assertNotEquals(4,result);
-	}
-	
-	@Test
-	public void test6() {
+	public void testBinarySearchNumberNotPresent() {
 		
 		int searchArray[] = {1,2,3,4};
 		result = searchNum.binarySearch(searchArray, 5, 0,searchArray.length);
 		assertEquals(-1,result);
 	}
 	
-	@Test(expected = AssertionError.class) 
-	public void test7() {
+	@Test
+	public void testBinarySearchNumberPresentLastIndex() {
+		
+		int searchArray[] = {1,2,3,4};
+		result = searchNum.binarySearch(searchArray, 4, 0,searchArray.length);
+		assertEquals(3,result);
+	}
+	
+	@Test 
+	public void testBinarySearchEmptyArray() {
 		
 		int searchArray[] = {};
 		result = searchNum.binarySearch(searchArray, 2, 0,searchArray.length);
-		assertNotEquals(2,result);
+		assertEquals(1,result);
 	}
 
 }
