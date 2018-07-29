@@ -166,11 +166,11 @@ public class ArrOperation {
 	public int maxMirror(int[] mirrorArray) {
 		int max = 0;
 		if (!isEmptyArray(mirrorArray)) {
-			for (int i = 0; i < mirrorArray.length; i++) {
+			for (int count1 = 0; count1 < mirrorArray.length; count1++) {
 				int count = 0;
-				for (int j = mirrorArray.length - 1; j >= 0
-						&& i + count < mirrorArray.length; j--) {
-					if (mirrorArray[i + count] == mirrorArray[j]) {
+				for (int count2 = mirrorArray.length - 1; count2 >= 0
+						&& count1 + count < mirrorArray.length; count2--) {
+					if (mirrorArray[count1 + count] == mirrorArray[count2]) {
 						count++;
 					} else {
 						max = Math.max(max, count);
