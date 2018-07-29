@@ -8,11 +8,11 @@ public class ArrOperationTest {
 
 ArrOperation arrOperate = new ArrOperation();
 private int result;
-int inputArray[];
+private int inputArray[];
 private int result2[];
 	
 	@Test
-	public void testSplitArrayPositive() {
+	public void testSplitArrayPositiveSmallArray() {
 		
 		inputArray = new int[]{10,10};
 		result = arrOperate.splitArrayFunction(inputArray);
@@ -20,10 +20,10 @@ private int result2[];
 	}
 	
 	@Test
-	public void testSplitArrayNegative() {
+	public void testSplitArraySplitNotPossible() {
 		inputArray = new int[]{10,10,1,1};
 		result = arrOperate.splitArrayFunction(inputArray);
-		assertNotEquals(3,result);
+		assertEquals(-1,result);
 	}
 	
 	@Test(expected = AssertionError.class) 
@@ -33,14 +33,14 @@ private int result2[];
 	}
 	
 	@Test
-	public void testClumpsPositive() {
+	public void testClumpsPositiveSmallArray() {
 		inputArray = new int[]{1,2,1,1,5,3};
 		result = arrOperate.totalClumps(inputArray);
 		assertEquals(1,result);
 	}
 	
 	@Test
-	public void testClumpsPositive2() {
+	public void testClumpsPositiveLongArray() {
 		inputArray = new int[]{1,2,2,2,1,1,5,3};
 		result = arrOperate.totalClumps(inputArray);
 		assertEquals(2,result);
@@ -53,14 +53,14 @@ private int result2[];
 	}
 	
 	@Test
-	public void testMaxMirrorPositive() {
+	public void testMaxMirrorPositiveSmallArray() {
 		inputArray = new int[]{1,2,3,3,2,1};
 		result = arrOperate.maxMirror(inputArray);
 		assertEquals(6,result);
 	}
 	
 	@Test
-	public void testMaxMirrorPositive2() {
+	public void testMaxMirrorPositiveLongArray() {
 		inputArray = new int[]{3,2,5,1,2,3,4,2,1};
 		result = arrOperate.maxMirror(inputArray);
 		assertEquals(2,result);
@@ -75,7 +75,7 @@ private int result2[];
 	// fixXY
 	
 	@Test
-	public void testPositive() {
+	public void testFixXYPositiveSmallArray() {
 		inputArray = new int[]{5,4,9};
 		result2 = arrOperate.fixXY(inputArray,4,5);
 		Assert.assertArrayEquals(new int[]{9,4,5},result2);
