@@ -39,6 +39,9 @@ public class Conversion implements GeneralizedConversion {
 		int endingIndex = startingIndex + (base - 9);
 		StringBuilder reversedHexaValue = new StringBuilder();
 		int remainder = 0;
+		if(dec==0){
+			reversedHexaValue.append("0");
+		}
 		while (decValue != 0) {
 			remainder = decValue % base;
 			if (remainder < 10) {

@@ -1,5 +1,5 @@
 import java.util.Scanner;
- 
+
 public class JobScheduler {
 	public static void main(String args[]){
 		
@@ -11,8 +11,6 @@ public class JobScheduler {
 		int dataEntry = 2;
 		int jobsArray[][] = new int[noOfProcess][dataEntry];
 		
-		//Entering data from user 
-		
 		System.out.println("Enter arrival time and burst time of each processes");
 		for(int i = 0; i<noOfProcess;i++){
 			for(int j=0;j<2;j++){
@@ -20,8 +18,8 @@ public class JobScheduler {
 			}
 		}
 		
-		FirstComeFirstServe scheduling = new FirstComeFirstServe(jobsArray,noOfProcess,dataEntry);
-		scheduling.fcfs();
+		FirstComeFirstServe scheduling = new FirstComeFirstServe(jobsArray,noOfProcess);
+		scheduling.getWaitingTime(jobsArray);
 		input.close();
 	}
 }

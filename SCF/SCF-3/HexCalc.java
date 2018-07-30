@@ -60,9 +60,13 @@ public class HexCalc implements GeneralCalculator {
 	public String divideHexaNum(String firstHexaValue, String secondHexaValue) {
 		firstDecValue = convert.baseToDec(firstHexaValue);
 		secondDecValue = convert.baseToDec(secondHexaValue);
+		if(secondDecValue!=0){
 		int divi = firstDecValue / secondDecValue;
 		String hexaDivi = convert.decToBase(divi);
 		return hexaDivi;
+		} else{
+			throw new AssertionError("Error: Cannot divide number by zero");
+		}
 	}
 
 	/*
