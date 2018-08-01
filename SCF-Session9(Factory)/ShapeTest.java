@@ -11,34 +11,34 @@ public class ShapeTest {
 	Screen screen = new Screen(100, 100);
 
 	@Test
-	public void testCreateShapeCircle() {
+	public void testCreateShapeCircle() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		Shape shape = screen.addShape(1, ShapeType.CIRCLE, new Point(3, 4), new ArrayList<Double>(Arrays.asList(5.0)));
 		double area = shape.getArea();
 		assertEquals(Math.PI * 5 * 5, area, 0);
 	}
 	
-	@Test(expected = AssertionError.class)
-	public void testCreateShapeCircleInvalidOrigin() {
+	@Test(expected = InvalidCoordinates.class)
+	public void testCreateShapeCircleInvalidOrigin() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		Shape shape = screen.addShape(1, ShapeType.CIRCLE, new Point(-3, -4), new ArrayList<Double>(Arrays.asList(5.0)));
 	}
 
 
 	@Test
-	public void testCreateShapeSquare() {
+	public void testCreateShapeSquare() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 		Shape shape = screen.addShape(2, ShapeType.SQUARE, new Point(2, 1), new ArrayList<Double>(Arrays.asList(4.0)));
 		double area = shape.getPerimeter();
 		assertEquals(16, area, 0);
 	}
 	
-	@Test(expected = AssertionError.class)
-	public void testCreateShapeSquareInvalidCoordinates() {
+	@Test(expected = InvalidCoordinates.class)
+	public void testCreateShapeSquareInvalidCoordinates() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 		Shape shape = screen.addShape(2, ShapeType.SQUARE, new Point(2, 1), new ArrayList<Double>(Arrays.asList(140.0)));
 	}
 
 	@Test
-	public void testCreateShapeRectangle() {
+	public void testCreateShapeRectangle() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 		Shape shape = screen.addShape(1, ShapeType.RECTANGLE, new Point(2.0, 2.0),
 				new ArrayList<Double>(Arrays.asList(3.0, 4.0)));
 		assertEquals(1, shape.getId());
@@ -46,7 +46,7 @@ public class ShapeTest {
 	
 
 	@Test
-	public void testCreateShapeTriangle() {
+	public void testCreateShapeTriangle() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		Shape shape = screen.addShape(1, ShapeType.TRIANGLE, new Point(0, 0),
 				new ArrayList<Double>(Arrays.asList(3.0, 4.0, 5.0, 5.0)));
@@ -54,8 +54,8 @@ public class ShapeTest {
 		assertEquals(6, area, 0);
 	}
 	
-	@Test(expected = AssertionError.class)
-	public void testCreateShapeTriangleInvalidId() {
+	@Test(expected = InvalidId.class)
+	public void testCreateShapeTriangleInvalidId() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		Shape shape1 = screen.addShape(1, ShapeType.TRIANGLE, new Point(0, 0),
 				new ArrayList<Double>(Arrays.asList(3.0, 4.0, 5.0, 5.0)));
@@ -64,7 +64,7 @@ public class ShapeTest {
 	}
 
 	@Test
-	public void testDeleteAllShape() {
+	public void testDeleteAllShape() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		Shape shape1 = screen.addShape(1, ShapeType.RECTANGLE, new Point(2, 1),
 				new ArrayList<Double>(Arrays.asList(3.0, 4.0)));
@@ -79,7 +79,7 @@ public class ShapeTest {
 	}
 
 	@Test
-	public void testDeleteShape() {
+	public void testDeleteShape() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		Shape shape1 = screen.addShape(1, ShapeType.RECTANGLE, new Point(2, 1),
 				new ArrayList<Double>(Arrays.asList(3.0, 4.0)));
@@ -94,7 +94,7 @@ public class ShapeTest {
 	
 
 	@Test(expected = AssertionError.class)
-	public void testDeleteShapeInvalidId() {
+	public void testDeleteShapeInvalidId() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		Shape shape1 = screen.addShape(1, ShapeType.RECTANGLE, new Point(2, 1),
 				new ArrayList<Double>(Arrays.asList(3.0, 4.0)));
@@ -107,7 +107,7 @@ public class ShapeTest {
 	}
 
 	@Test
-	public void testSortByArea() {
+	public void testSortByArea() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		ShapeType type1 = ShapeType.CIRCLE;
 		Point point1 = new Point(1, 1);
@@ -126,7 +126,7 @@ public class ShapeTest {
 	}
 
 	@Test
-	public void testSortByDistance() {
+	public void testSortByDistance() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		ShapeType type1 = ShapeType.CIRCLE;
 		Point point1 = new Point(1, 1);
@@ -145,7 +145,7 @@ public class ShapeTest {
 	}
 
 	@Test
-	public void testSortByPerimeter() {
+	public void testSortByPerimeter() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		ShapeType type1 = ShapeType.CIRCLE;
 		Point point1 = new Point(1, 1);
@@ -164,7 +164,7 @@ public class ShapeTest {
 	}
 
 	@Test
-	public void testSortByTimestamp() {
+	public void testSortByTimestamp() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 		ShapeType type1 = ShapeType.CIRCLE;
 		Point point1 = new Point(1, 1);
@@ -183,7 +183,7 @@ public class ShapeTest {
 	}
 	
 	@Test
-	public void testShapesEnclosingPoint() {
+	public void testShapesEnclosingPoint() throws InvalidCoordinates, InvalidId, InvalidShapeType {
 
 	Shape shape1 = screen.addShape(1,ShapeType.RECTANGLE, new Point(50, 50),
 			new ArrayList<Double>(Arrays.asList(6.0, 4.0)));

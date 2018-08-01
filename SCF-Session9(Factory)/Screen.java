@@ -45,15 +45,17 @@ public class Screen {
 	 * @param parameters
 	 *            contains the list of parameters of the shape
 	 * @return shapeObject, object of the shape created
+	 * @throws InvalidId, InvalidCoordinates exception if invalid parameters are given as input
+	 * @throws InvalidShapeType exception if valid shape is not entered
 	 */
-	Shape addShape(int id, ShapeType type, Point point, List<Double> parameters) {
+	Shape addShape(int id, ShapeType type, Point point, List<Double> parameters) throws InvalidCoordinates, InvalidId, InvalidShapeType{
 
 		Shape shapeObject = null;
 
 		if (!shapeId.contains(id)) {
 			shapeId.add(id);
 		} else {
-			throw new AssertionError("Enter valid id");
+			throw new InvalidId("Enter valid id");
 		}
 
 		switch (type) {
@@ -72,7 +74,7 @@ public class Screen {
 
 				break;
 			} else {
-				throw new AssertionError("Please enter correct coordinates!!");
+				throw new InvalidCoordinates("Please enter correct coordinates!!");
 			}
 
 		case RECTANGLE:
@@ -86,7 +88,7 @@ public class Screen {
 
 				break;
 			} else {
-				throw new AssertionError("Please enter correct coordinates!!");
+				throw new InvalidCoordinates("Please enter correct coordinates!!");
 			}
 
 		case SQUARE:
@@ -99,7 +101,7 @@ public class Screen {
 
 				break;
 			} else {
-				throw new AssertionError("Please enter correct coordinates!!");
+				throw new InvalidCoordinates("Please enter correct coordinates!!");
 			}
 
 		case TRIANGLE:
@@ -115,10 +117,10 @@ public class Screen {
 
 				break;
 			} else {
-				throw new AssertionError("Please enter correct coordinates!!");
+				throw new InvalidCoordinates("Please enter correct coordinates!!");
 			}
 		default:
-			throw new AssertionError("Enter valid shape type");
+			throw new InvalidShapeType("Enter valid shape type");
 		}
 		shapeObject = Factory.createShape(id, type, point, parameters);
 		listOfShapes.add(shapeObject);
@@ -138,8 +140,9 @@ public class Screen {
 	 * @param shapeId,
 	 *            unique id of the shape
 	 * @return id of the deleted shape
+	 * @throws InvalidId exception if id does not exists
 	 */
-	int deleteShape(ShapeType type, int shapeId) {
+	int deleteShape(ShapeType type, int shapeId) throws InvalidId {
 
 		int id = -1;
 		System.out.println(shapeId);
@@ -154,7 +157,7 @@ public class Screen {
 
 		}
 		if(id == -1){
-			throw new AssertionError("Enter valid id of the shape");
+			throw new InvalidId("Enter valid id of the shape");
 		}
 		return id;
 	}
