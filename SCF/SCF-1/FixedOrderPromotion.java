@@ -38,6 +38,14 @@ public class FixedOrderPromotion implements Promotions{
 	 * @returns true if it is correct else false
 	 */
 	public boolean isValidPromo(String promoCode){
+		
+		/*boolean status = false;
+		EnumSet.allOf(PromotionEnum.class).forEach(promo -> {
+			if(promo.equals(promoCode)){
+				this.validPromo = promo;
+			} 
+			});
+		status =true;*/
 		for(PromotionEnum p : PromotionEnum.values()){
 			if(promoCode.equals(p.getCode())){
 				this.validPromo= p;
@@ -46,7 +54,6 @@ public class FixedOrderPromotion implements Promotions{
 		}
 		return false;
 	}
-	
 	@Override
 	/*
 	 * checks if the entered promo code is valid for today's date or not and 
