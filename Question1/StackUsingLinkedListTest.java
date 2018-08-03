@@ -40,7 +40,12 @@ public class StackUsingLinkedListTest {
 		boolean result = stack.isEmpty();
 		assertEquals(result,true);
 	}
-	
+	@Test(expected = AssertionError.class)
+	public void testTopEmptyStack() throws StackException {
+
+		int result = stack.top();
+		assertEquals(result,true);
+	}
 	
 
 }
