@@ -43,8 +43,12 @@ public class StackUsingLinkedList<E> implements Stack<E> {
 
 	@Override
 	public E top() {
-		E topValue = (E) topElement.getData();
-		return topValue;
+		if (!isEmpty()) {
+			E topValue = (E) topElement.getData();
+			return topValue;
+		} else {
+			throw new AssertionError("No element is present is stack");
+		}
 	}
 
 	@Override
