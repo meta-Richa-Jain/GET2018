@@ -89,5 +89,12 @@ public class QueueUsingArrayTest {
 		queue.insert("queue");
 		assertEquals(false, queue.isFull());
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testEmptyQueueTop() throws QueueException {
+		
+		String top = queue.top();
+		
+	}
 
 }

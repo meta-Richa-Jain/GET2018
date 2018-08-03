@@ -64,8 +64,11 @@ public class QueueUsingArray<E> implements Queue<E> {
 
 	@Override
 	public E top() {
-
-		return queue[front];
+		if (!isEmpty()) {
+			return queue[front];
+		} else {
+			throw new AssertionError("Empty Queue");
+		}
 	}
 
 }

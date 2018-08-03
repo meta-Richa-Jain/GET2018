@@ -58,5 +58,11 @@ QueueUsingLinkedList<String> queue = new QueueUsingLinkedList<String>();
 		assertEquals(false, queue.isFull());
 	}
 	
+	@Test(expected = AssertionError.class)
+	public void testEmptyQueueTop() throws QueueException {
+		
+		String top = queue.top();
+		
+	}
 
 }

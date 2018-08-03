@@ -36,13 +36,13 @@ public class QueueUsingLinkedList<E> implements Queue<E> {
 
 	@Override
 	public E remove() throws QueueException {
-		if(!isEmpty()){
-		E data = (E) front.getData();
-		front = front.getNext();
-		return data;
-		}
-		else {
-			throw new QueueException("Queue Underflow: queue does not any element");
+		if (!isEmpty()) {
+			E data = (E) front.getData();
+			front = front.getNext();
+			return data;
+		} else {
+			throw new QueueException(
+					"Queue Underflow: queue does not any element");
 		}
 	}
 
@@ -59,7 +59,11 @@ public class QueueUsingLinkedList<E> implements Queue<E> {
 	@Override
 	public E top() {
 
-		return (E) front.getData();
+		if (!isEmpty()) {
+			return (E) front.getData();
+		} else {
+			throw new AssertionError("No element in queue");
+		}
 	}
 
 }
