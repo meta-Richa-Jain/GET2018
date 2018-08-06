@@ -6,13 +6,12 @@ import Question1.StackUsingLinkedList;
 
 /**
  * This class is used to convert an infix expression to postfix expression where
- * tokens are separated using whitespaces
+ * tokens are separated using whitespace
  * 
  * @author Richa Jain
  *
  */
 public class InfixToPostfix {
-
 	String infixExp;
 	Stack<String> stack = new StackUsingLinkedList<String>();
 
@@ -28,50 +27,67 @@ public class InfixToPostfix {
 	 */
 	String findPostfixExpression() throws StackException {
 		StringBuilder postfix = new StringBuilder();
+		String infix[] = infixExp.split("\\s+");
 
-		String tokensArray[] = infixExp.split("\\s+");
-		for (String token : tokensArray) {
-			if (!isOperator(token) && token != "(" && token != ")") {
-				postfix.append(token);
-			} else if (token.equals("(")) {
-				stack.push("(");
-			} else if (token.equals(")")) {
-				while (!stack.isEmpty() && stack.top() != "(") {
-					postfix.append(stack.pop());
-				}
-				if (!stack.isEmpty() && stack.top() != "(") {
-					throw new AssertionError("Invalid Expression");
-				} else if (!stack.isEmpty() && stack.top().equals("(")) {
-					stack.pop();
-				}
-			} else if (isOperator(token)) {
-				while (!stack.isEmpty() && getPrecedence(stack.top()) <= getPrecedence(token)) {
-					if (stack.top() != "(" || stack.top() != ")") {
-						if (stack.top().equals("(")) {
-							stack.pop();
-						}
+		for (int i = 0; i < infix.length; i++) {
+
+			if (infix[i].matches("[a-z]*[A-Z]*[0-9]*")) {
+				postfix.append(infix[i]);
+			}
+			if ("(".equals(infix[i])) {
+				stack.push(infix[i]);
+			} else {
+				if (")".equals(infix[i]) && !(stack.isEmpty())) {
+					while (!(stack.isEmpty()) && !("(".equals(stack.top()))) {
 						postfix.append(stack.pop());
 					}
+					if (!(stack.isEmpty()) && !("(".equals(stack.top()))) {
+						throw new AssertionError("invalid expression");
+					}
+					if (!(stack.isEmpty()) && "(".equals(stack.top())) {
+						stack.pop();
+					}
+
+				} else {
+					if (isOperator(infix[i])) {
+						if (stack.isEmpty()) {
+							stack.push(infix[i]);
+						} else {
+							if (((getPrecedence(infix[i])) > (getPrecedence(stack
+									.top())))) {
+								stack.push(infix[i]);
+							} else {
+								while (!(stack.isEmpty())
+										&& (getPrecedence(infix[i]) <= getPrecedence(stack
+												.top()))
+										&& !("(".equals(stack.top()))) {
+									postfix.append(stack.pop());
+								}
+								stack.push(infix[i]);
+							}
+						}
+
+					}
+
 				}
-				stack.push(token);
 			}
 		}
-		while (!stack.isEmpty())
+		while (!(stack.isEmpty())) {
 			postfix.append(stack.pop());
+		}
 		return postfix.toString();
+
 	}
 
 	/**
 	 * Helper function to check if a current token is an operator or not
 	 * 
-	 * @param checkToken,
-	 *            current token to check
-	 * @return true if a token is operato else false
+	 * @param checkToken
+	 *            , current token to check
+	 * @return true if a token is operator else false
 	 */
 	private boolean isOperator(String checkToken) {
-
 		switch (checkToken) {
-
 		case "!":
 		case "*":
 		case "/":
@@ -96,12 +112,11 @@ public class InfixToPostfix {
 	/**
 	 * Helper function to calculate the precedence of a operator
 	 * 
-	 * @param operator,
-	 *            input operator
+	 * @param operator
+	 *            , input operator
 	 * @return precendence of the operators
 	 */
 	private int getPrecedence(String operator) {
-
 		switch (operator) {
 		case "!":
 		case "(":
@@ -129,3 +144,4 @@ public class InfixToPostfix {
 		return -1;
 	}
 }
+
