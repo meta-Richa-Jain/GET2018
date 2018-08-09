@@ -32,5 +32,11 @@ public class CountUniqueCharacterTest {
 		int result = count.CountUniqueCharacters(null);
 		
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testEmptyString() {
+		int result = count.CountUniqueCharacters(" ");
+		
+	}
 
 }
