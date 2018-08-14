@@ -13,8 +13,8 @@ public class NestedListTest {
 	@Test
 	public void testSum() throws IOException, ParseException {
 		NestedListOperation nestedOperations = new NestedListOperation(
-				"E:/Assignments/Assignment11/src/nestedList/input.json.txt");
-		int result = nestedOperations.sumOfAllValues();
+				"C:/Users/User12/workspace/DS-Assignment2 (part2)/src/nestedList/input.json.txt");
+		long result = nestedOperations.sumOfAllValues();
 		assertEquals(result, 207);
 	}
 
@@ -22,7 +22,7 @@ public class NestedListTest {
 	public void testLargest() throws IOException, ParseException {
 		NestedListOperation nestedOperations = new NestedListOperation(
 				"C:/Users/User12/workspace/DS-Assignment2 (part2)/src/nestedList/input.json.txt");
-		int result = nestedOperations.largestValue();
+		long result = nestedOperations.largestValue();
 		assertEquals(result, 99);
 	}
 
@@ -38,7 +38,7 @@ public class NestedListTest {
 	public void testGetValue() throws IOException, ParseException {
 		NestedListOperation nestedOperations = new NestedListOperation(
 				"C:/Users/User12/workspace/DS-Assignment2 (part2)/src/nestedList/input.json.txt");
-		int result = (int) nestedOperations.getValue("hh");
+		long result = (long) nestedOperations.getValue("hh");
 		assertEquals(result, 2);
 	}
 }

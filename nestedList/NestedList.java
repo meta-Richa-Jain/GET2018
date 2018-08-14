@@ -18,7 +18,7 @@ public interface NestedList {
 	 *            whose values sum is to be calculated
 	 * @return sum of all values of nested list
 	 */
-	public int sumOfAllValues();
+	public long sumOfAllValues();
 
 	/**
 	 * largestValue will find the largest value present in nested list
@@ -27,7 +27,7 @@ public interface NestedList {
 	 *            in which largest value is to be searched
 	 * @return largest value in nested list
 	 */
-	public int largestValue();
+	public long largestValue();
 
 	/**
 	 * searchValue will search the element in nested list
@@ -37,5 +37,5 @@ public interface NestedList {
 	 * @param element
 	 * @return
 	 */
-	public boolean searchValue(int element);
+	public boolean searchValue(long element);
 }
