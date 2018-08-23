@@ -8,40 +8,40 @@ import java.util.Date;
  */
 public class Order {
 
-	private int order_id;
-	private int product_id;
-	private Date placed_date;
+	private int orderId;
+	private int productId;
+	private Date placedDate;
 	private double amount;
 
-	public Order(int order_id, int product_id, Date placed_date, double amount) {
-		this.order_id = order_id;
-		this.product_id = product_id;
-		this.placed_date = placed_date;
+	public Order(int orderId, int productId, Date placedDate, double amount) {
+		this.orderId = orderId;
+		this.productId= productId;
+		this.placedDate = placedDate;
 		this.amount = amount;
 	}
 
-	public int getOrder_id() {
-		return order_id;
+	public int getOrderId() {
+		return orderId;
 	}
 
-	public void setOrder_id(int order_id) {
-		this.order_id = order_id;
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
 	}
 
-	public int getProduct_id() {
-		return product_id;
+	public int getProductId() {
+		return productId;
 	}
 
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 
-	public Date getPlaced_date() {
-		return placed_date;
+	public Date getPlacedDate() {
+		return this.placedDate;
 	}
 
-	public void setPlaced_date(Date placed_date) {
-		this.placed_date = placed_date;
+	public void setPlacedDate(Date placedDate) {
+		this.placedDate = placedDate;
 	}
 
 	public double getAmount() {
@@ -51,5 +51,6 @@ public class Order {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-
 }
+
+	
