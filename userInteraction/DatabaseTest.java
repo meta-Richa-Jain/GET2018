@@ -1,4 +1,5 @@
 package userInteraction;
+
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -9,9 +10,10 @@ import org.junit.Test;
 import pojo.Category;
 import pojo.Order;
 import pojo.Image;
+
 public class DatabaseTest {
 
-	Main func = new Main();
+	Main func = new Main("jdbc:mysql://localhost:3306/storefront", "root", "user#123");
 
 	@Test
 	public void testCategory() {
@@ -32,20 +34,13 @@ public class DatabaseTest {
 	@Test
 	public void testImage() {
 		List<Image> listImages = new ArrayList<Image>();
-		Image image1 = new Image("https://image5_product3", "image5 product 3",
-				3);
-		Image image2 = new Image("https://image6_product3", "image6 product 3",
-				3);
-		Image image3 = new Image("https://image7_product3", "image7 product 3",
-				3);
-		Image image4 = new Image("https://image8_product3", "image8 product 3",
-				3);
-		Image image5 = new Image("https://image4_product4", "image4 product 4",
-				4);
-		Image image6 = new Image("https://image5_product4", "image5 product 4",
-				4);
-		Image image7 = new Image("https://image6_product4", "image6 product 4",
-				4);
+		Image image1 = new Image("https://image5_product3", "image5 product 3", 3);
+		Image image2 = new Image("https://image6_product3", "image6 product 3", 3);
+		Image image3 = new Image("https://image7_product3", "image7 product 3", 3);
+		Image image4 = new Image("https://image8_product3", "image8 product 3", 3);
+		Image image5 = new Image("https://image4_product4", "image4 product 4", 4);
+		Image image6 = new Image("https://image5_product4", "image5 product 4", 4);
+		Image image7 = new Image("https://image6_product4", "image6 product 4", 4);
 		listImages.add(image1);
 		listImages.add(image2);
 		listImages.add(image3);
@@ -62,5 +57,5 @@ public class DatabaseTest {
 		int actual = func.productStatus();
 		assertEquals(2, actual);
 	}
-	
+
 }
