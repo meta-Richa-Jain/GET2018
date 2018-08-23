@@ -1,4 +1,5 @@
 package database;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,20 +14,23 @@ import java.util.List;
  */
 public class ConnectionPool {
 
-	private List<Connection> availableConnections = new ArrayList<Connection>();
-	private List<Connection> usedConnections = new ArrayList<Connection>();
+	private List<Connection> availableConnections;
+	private List<Connection> usedConnections;
 	private final int MAX_CONNECTIONS = 2;
 
-	private static final String database_name = "storefront";
-	private static final String url = "jdbc:mysql://localhost:3306/"
-			+ database_name;
-	private static final String username = "root";
-	private static final String password = "complicated";
+	private String url;
+	private String username;
+	private String password;
 
 	/**
 	 * Method to store connections in availableConnections list
 	 */
-	public ConnectionPool() {
+	public ConnectionPool(String url, String username, String password) {
+		this.url = url;
+		this.username = username;
+		this.password = password;
+		availableConnections = new ArrayList<Connection>();
+		usedConnections = new ArrayList<Connection>();
 		for (int count = 0; count < MAX_CONNECTIONS; count++) {
 			availableConnections.add(this.createConnection());
 		}
@@ -37,7 +41,7 @@ public class ConnectionPool {
 	 * 
 	 * @return conn, connection object
 	 */
-	public Connection createConnection() {
+	private Connection createConnection() {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -63,8 +67,7 @@ public class ConnectionPool {
 			System.out.println("All connections are Used !!");
 			return null;
 		} else {
-			Connection con = availableConnections.remove(availableConnections
-					.size() - 1);
+			Connection con = availableConnections.remove(availableConnections.size() - 1);
 			usedConnections.add(con);
 			return con;
 		}
