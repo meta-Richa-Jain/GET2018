@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SignUp</title>
+<script src='js/signup.js'>
+</script>
+
+<link rel='stylesheet' href='css/signUp.css' />
+
+</head>
+<body>
+	<center>
+		<!-- Header table starts -->
+		<table width=80%>
+			<tr>
+				<td><img src="Images/img1.jpg" height="85"></td>
+				<td align="right" ><a href="Home.html" class="button button1"> Home </a>  <a href="#"class="button button2">About
+				</a>  <a href="#" class="button button3"> Product </a>  <a href="#" class="button button4">Gallery </a>
+					 <a href="Contact.html" class="button button5"> Contact </a> <a
+					href="SignUp.html"class="button button6"> SignUp </a><a href="Login.html" class="button button7">
+						Login </a></td>
+			</tr>
+		</table>
+		<!-- Header table ends -->
+		<hr width="90%">
+		<br />
+		<h1>New User Registration</h1>
+		<form action="#" name="signUpForm" onsubmit="signup()"
+			 id="form">
+			<table id="table1"  style="background-color:#FFFDD0">
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" id="fName" placeholder="Enter First Name" onkeypress='validateFirstName()'/></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" id="lName" placeholder="Enter Last Name"/></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" id="email" placeholder="Enter Email" onblur='validateEmail()'/></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" id="password" placeholder="Enter Password" onkeypress='validatePassword()'/></td>
+				</tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td><input type="password" id="confirmPassword" placeholder="Enter Confirm Password" onblur='checkPasswordEquality()'/></td>
+				</tr>
+				<tr>
+					<td>Contact Number</td>
+					<td><input type="text" id="contactNumber" placeholder="Enter Contact Number" onblur='validateContact()'/></td>
+				</tr>
+				<tr>
+					<td>Company/Institution</td>
+					<td><select id="company" name="company">
+							<option value="metacube">Metacube Software Pvt. Ltd.</option>
+							<option value="mindtree">Mindtree</option>
+							<option value="infosys">Infosys</option>
+							<option value="ibm">IBM</option>
+					</select></td>
+				</tr>
+				<tr colspan=2>
+					<td><input type="submit" value="Submit" id="submit" class="button button1" /></td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>
