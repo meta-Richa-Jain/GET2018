@@ -1,3 +1,4 @@
+var errorMsg ="";
 function validateFirstName(){
 	     var pattern = new RegExp("(^[A-Za-z]+$)");  
 		 var firstname = document.getElementById("fName");
@@ -5,7 +6,8 @@ function validateFirstName(){
 		firstname.style.borderColor = "green";
 		return true;
 		}else{
-		firstname.style.borderColor = "red";	
+		firstname.style.borderColor = "red";
+			errorMsg += "Invalid First Name ";
 		}
 }
 
@@ -17,6 +19,7 @@ function validateLastName(){
 		return true;
 		}else{
 		lastname.style.borderColor = "red";	
+		errorMsg += "Invalid Last Name ";
 		}
 }
 
@@ -29,6 +32,7 @@ function validatePassword(){
       }
       else{
        password.style.borderColor = "red";
+	   errorMsg += "Invalid Password ";
       }
 }
 
@@ -39,7 +43,8 @@ function validateContact(){
 	  contact.style.borderColor = "green";
 	  return true;
 	 }else{
-	  contact.style.borderColor = "red";	 
+	  contact.style.borderColor = "red";
+		errorMsg += "Invalid Contact Number ";
 	 }
 	 	   
 }
@@ -51,7 +56,8 @@ function validateEmail(){
 		email.style.borderColor = "green";
 		return true;
 	}else{
-	  email.style.borderColor = "red";	
+	  email.style.borderColor = "red";
+		errorMsg += "Invalid email ";
 	}
 }
 
@@ -64,6 +70,7 @@ function checkPasswordEquality(){
 		return true;
 	}else{
 		confirmpassword.style.borderColor = "red"; 
+		errorMsg += "Invalid confirm password ";
 	}
 }
 
@@ -80,10 +87,10 @@ function signup(){
    debugger;
    if(validateAll()){
 	
-   alert('Success');
-   document.signUpForm.action = 'Home.html';
+   alert('Signed Up Successfully!!');
+   document.signUpForm.action = 'Login.html';
    document.signUpForm.submit();
    }else{
-   alert('Invalid Input ! Input Correctly');
+   alert(errorMsg);
    }
 }
