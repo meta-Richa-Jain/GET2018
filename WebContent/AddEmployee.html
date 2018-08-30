@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Employee</title>
+<script src='Employee.js'></script>
+</head>
+<body>
+	<form name="addEmployee" id="addEmployee" onsubmit = 'addEmployee()' >
+		<table>
+			<tr>
+				<td>First Name</td>
+				<td><input type="text" id="fName" name="fName" placeholder = "Enter First Name" onblur='validateFirstName()' /></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text" id="lName" name="lName" placeholder = "Enter Last Name" onblur='validateLastName()' /></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="email" id="email" name="email" placeholder = "Enter Email-Id" onblur='validateEmail()' /></td>
+			</tr>
+			<tr>
+				<td>Age</td>
+				<td><input type="text" id="age" name="age" placeholder = "Enter Age" onblur='validateAge()' /></td>
+			</tr>
+			<tr colspan=2>
+				<td><input type="Submit" value="Submit" id="submit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
