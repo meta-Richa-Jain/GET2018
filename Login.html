@@ -24,18 +24,18 @@
 		<hr width="90%">
 		<br />
 		<h1>Login</h1>
-		<form action="#" name = "login">
-			<table id="table1"  style="background-color:#FFFDD0">
+		<form name="loginForm" onsubmit="logIn()" id="loginForm">
+			<table id="table1"  style="background-color:#FFFAFA">
 				<tr>
 					<td>Email</td>
-					<td><input type="email" id="email" placeholder="Enter Email"/></td>
+					<td><input type = "email" id = "email" placeholder = "Enter Email" onblur = 'validateEmail()'/></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" id="password" placeholder="Enter Password"/></td>
+					<td><input type = "password" id= "password" placeholder = "Enter Password" onblur = 'validatePassword()'/></td>
 				</tr>
 				<tr colspan=2>
-					<td><input type="submit" value="Login" id="login"class="button button1" /></td>
+					<td><input type="submit" value = "Login" id = "login" class="button button1" /></td>
 					<td><a href = "#" style="text-decoration:none;"> Forgot Password</a>
 				</tr>
 			</table>

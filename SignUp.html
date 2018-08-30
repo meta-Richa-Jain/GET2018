@@ -26,16 +26,15 @@
 		<hr width="90%">
 		<br />
 		<h1>New User Registration</h1>
-		<form action="#" name="signUpForm" onsubmit="signup()"
-			 id="form">
-			<table id="table1"  style="background-color:#FFFDD0">
+		<form name="signUpForm" onsubmit="signup()" id="form">
+			<table id="table1"  style="background-color:#FFFAFA">
 				<tr>
 					<td>First Name</td>
-					<td><input type="text" id="fName" placeholder="Enter First Name" onkeypress='validateFirstName()'/></td>
+					<td><input type="text" id="fName" placeholder="Enter First Name" onblur='validateFirstName()'/></td>
 				</tr>
 				<tr>
 					<td>Last Name</td>
-					<td><input type="text" id="lName" placeholder="Enter Last Name"/></td>
+					<td><input type="text" id="lName" placeholder="Enter Last Name" onblur='validateLastName()'/></td>
 				</tr>
 				<tr>
 					<td>Email</td>
@@ -43,7 +42,7 @@
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" id="password" placeholder="Enter Password" onkeypress='validatePassword()'/></td>
+					<td><input type="password" id="password" placeholder="Enter Password" onblur='validatePassword()'/></td>
 				</tr>
 				<tr>
 					<td>Confirm Password</td>
