@@ -1,0 +1,57 @@
+.button {
+    background-color: #008B8B; 
+    border-radius: 20px;
+    color: white;
+    padding: 13px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+
+.button1:hover{
+    box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 10px 0 rgba(0,0,0,0.19);
+}
+.button2:hover{
+    box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 10px 0 rgba(0,0,0,0.19);
+}
+.button3:hover{
+    box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 10px 0 rgba(0,0,0,0.19);
+}
+.button4:hover{
+    box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 10px 0 rgba(0,0,0,0.19);
+}
+.button5:hover{
+    box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 10px 0 rgba(0,0,0,0.19);
+}
+.button6:hover{
+    box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 10px 0 rgba(0,0,0,0.19);
+}
+.button7:hover{
+    box-shadow: 0 12px 10px 0 rgba(0,0,0,0.24),0 17px 10px 0 rgba(0,0,0,0.19);
+}
+#table1, tr {    
+    border: 2px solid #ddd;
+    text-align: left;
+	width:30%;
+	height:35px;
+}
+input[type=email] {
+    width: 200px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=password]{
+    width: 200px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
