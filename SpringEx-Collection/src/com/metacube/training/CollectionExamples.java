@@ -18,7 +18,6 @@ public class CollectionExamples {
 
 	// prints and returns all the elements of the list.
 	public List getAddressList() {
-		System.out.println("List Elements :" + addressList);
 		return addressList;
 	}
 
@@ -29,7 +28,6 @@ public class CollectionExamples {
 
 	// prints and returns all the elements of the Set.
 	public Set getAddressSet() {
-		System.out.println("Set Elements :" + addressSet);
 		return addressSet;
 	}
 
@@ -40,7 +38,6 @@ public class CollectionExamples {
 
 	// prints and returns all the elements of the Map.
 	public Map getAddressMap() {
-		System.out.println("Map Elements :" + addressMap);
 		return addressMap;
 	}
 
