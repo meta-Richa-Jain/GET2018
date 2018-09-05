@@ -7,9 +7,15 @@ public class Main {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-
-		TextEditor textEditor = (TextEditor) context.getBean("textEditor");
+		TextEditor textEditor = null;
+		try {
+			ApplicationContext context = new ClassPathXmlApplicationContext(
+					"beans.xml");
+			textEditor = (TextEditor) context.getBean("textEditor");
+			
+		} catch (Exception e) {
+			System.out.println("Class not found or bean  not found");
+		}
 		textEditor.spellCheck();
 	}
 
