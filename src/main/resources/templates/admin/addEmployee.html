@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		   <form th:action="@{addEmployee}" method="post">
+			<label>First Name:</label> <input type="text" th:field="*{firstName}" />
+			<br> <label>Last Name:</label> <input type="text"
+				th:field="*{lastName}" /> <br> <label>DoB:</label> <input
+				type="date" th:field="*{dob}" /> <br> <label>Email-Id:</label>
+			<input type="text" th:field="*{emailId}" /> <br> <label>Gender:</label>
+			<input type="text" th:field="*{gender}" /> <br> <label>Primary
+				Contact Number:</label> <input type="text" th:field="*{primaryContactNo}" />
+			<br> <label>Secondary Contact Number:</label> <input type="text"
+				th:field="*{secondaryContactNo}" /> <br> <label>Skype-Id:</label>
+			<input type="text" th:field="*{skypeId}" /> <br> <label>Profile
+				Picture:</label> <input type="file" th:field="*{profilePicture}" /> <br>
+			<label>Password:</label> <input type="text" th:field="*{password}" />
+			<br>
+			<button type="submit" class="btn btn-primary">Save</button>
+
+		</form>
+	</div>
+</body>
+</html>
