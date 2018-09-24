@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Show Employees</title>
+
+</head>
+<body>
+	<div class="container">
+		<div th:if="${not #lists.isEmpty(employees)}">
+			<h2>All Employees</h2>
+			<table class="table table-striped">
+				<tr>
+					<th>Name</th>
+					<th>Date Of birth</th>
+					<th>Email-Id</th>
+					<th>Gender</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+				<tr th:each="employee : ${employees}">
+					<td th:text="${employee.firstName + ' ' + employee.lastName}">Name</td>
+					<td th:text="${employee.dob}">Date of Birth</td>
+					<td th:text="${employee.emailId}">Email-Id</td>
+					<td th:text="${employee.gender}">Gender</td>
+					<td><a th:href="${'showEmployee/edit?id=' + employee.code}"
+						class="btn btn-default">Edit</a></td>
+					<td><a th:href="${'showEmployee/delete?id=' + employee.code}"
+						class="btn btn-danger">Delete</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
