@@ -17,7 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		auth.inMemoryAuthentication().withUser("richa.jain1@metacube.com")
 				.password("{noop}123456").roles("ADMIN");
-		auth.inMemoryAuthentication().withUser("employee")
+		auth.inMemoryAuthentication().withUser("employee@metacube.com")
 				.password("{noop}123456").roles("EMPLOYEE");
 
 	}
@@ -26,22 +26,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests().antMatchers("/admin/*")
-				.access("hasRole('ROLE_ADMIN')")
-				.antMatchers("/employee/*")
-				.access("hasRole('ROLE_EMPLOYEE')")
-				.and()
-				.formLogin()
-				. // login configuration
-				loginPage("/login").loginProcessingUrl("/Login")
-				.defaultSuccessUrl("/default")
-				.usernameParameter("email").passwordParameter("password").and()
-				.logout().logoutUrl("/Logout")
-				// logout configuration
-				.logoutSuccessUrl("/login").and().exceptionHandling().and()
-				.logout().logoutUrl("/logout")
-				// logout configuration
-				.logoutSuccessUrl("/login").and().exceptionHandling()
-				.accessDeniedPage("/error").and().csrf();
-
+		.access("hasRole('ROLE_ADMIN')")
+		.antMatchers("/employee/*")
+		.access("hasRole('ROLE_EMPLOYEE')")
+		.and()
+		.formLogin()
+		. // login configuration
+		loginPage("/login").loginProcessingUrl("/Login")
+		.defaultSuccessUrl("/default")
+		.usernameParameter("email").passwordParameter("password").and()
+		.logout().logoutUrl("/logout")
+		// logout configuration
+		.logoutSuccessUrl("/login").and().exceptionHandling()
+		.accessDeniedPage("/error").and().csrf();
 	}
 }
