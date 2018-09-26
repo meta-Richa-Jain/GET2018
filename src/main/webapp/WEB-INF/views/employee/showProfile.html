@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Employee Profile</title>
+
+</head>
+<body>
+	<div class="container">
+		<div>
+			<h2>Employee Profile</h2>
+			<table class="table table-striped">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Date of Birth</th>
+					<th>Gender</th>
+					<th>Email</th>
+					<th>Primary Contact Number</th>
+					<th>Secondary Contact Number</th>
+					<th>Skype Id</th>
+
+				</tr>
+				<tr th:object="${employee}" >
+					<td th:text="${employee.code}">Id</td>
+					<td th:text="${employee.firstName + ' ' + employee.lastName}">Name</td>
+					<td th:text="${employee.dob}">Date of Birth</td>
+					<td th:text="${employee.gender}">Gender</td>
+					<td th:text="${employee.emailId}">Email</td>
+					<td th:text="${employee.primaryContactNo}">Primary Contact Number</td>
+					<td th:text="${employee.secondaryContactNo}">Secondary Contact Number</td>
+					<td th:text="${employee.skypeId}">Skype Id</td>
+
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
