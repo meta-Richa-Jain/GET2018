@@ -1,0 +1,61 @@
+#main-container {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.square {
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    animation-name: rotation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out
+}
+
+#main-container :nth-child(1) {
+    background-color: #7a45e5;
+    animation-delay: -0s;
+}
+
+#main-container :nth-child(2) {
+    background-color: #fa5667;
+    animation-delay: -0.5s
+}
+
+#main-container :nth-child(3) {
+    background-color: #fac24c;
+    animation-delay: -1s
+}
+
+#main-container :nth-child(4) {
+    background-color: #1b91f7;
+    animation-delay: -1.5s
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(0%, 0%)
+    }
+
+    25% {
+        transform: translate(0%, 100%)
+    }
+
+    50% {
+        transform: translate(100%, 100%)
+    }
+
+    75% {
+        transform: translate(100%, 0%)
+    }
+}

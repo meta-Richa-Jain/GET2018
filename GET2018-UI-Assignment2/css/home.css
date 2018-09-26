@@ -1,0 +1,285 @@
+body {
+    margin: 0;
+}
+
+#background-container {
+    background-image: url("../images/homebg.png");
+    background-size: 100% 100%;
+    height: 550px;
+
+}
+
+#cover1-left-buttons{
+    padding-top: 0px;
+}
+
+#header {
+    display : flex;
+    justify-content: space-between;
+}
+
+#logo,
+#header-links,
+#header-widgets {
+    display: inline-block;
+    height: 30px;
+    width: 35%;
+    text-align: center;
+    padding: 13px;
+}
+
+#header-links a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+
+}
+
+#cover1 {
+    display: flex;
+    padding-top: 20px;
+}
+
+cover1-left {
+    display: flex;
+    text-align: center;
+/*    vertical-align: top;*/
+    justify-content: space-between;
+    
+}
+
+#cover1-left-buttons{
+    padding: 20px 20px;
+}
+
+#cover1-left,
+#cover1-right-image {
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+    vertical-align: top;
+
+}
+
+#cover1-left h1 {
+
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 12px 20px 12px 20px;
+    height: 25px;
+    width: 40px;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+
+}
+
+#download-link {
+    background-color: red;
+}
+
+#features-link {
+    background-color: blue;
+}
+
+
+#background-image-cover {
+    background-image: url("../images/downloadbg.png");
+}
+
+#cover-feature-content  {
+    display: flex;
+    width: 70%;
+    vertical-align: top;
+    text-align: center;
+    margin-top:80px;
+    padding: 5x;
+    height: 300px;
+    margin-left: 170px;
+}
+
+#cover-feature-image{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+#cover-feature-image1{
+	transform: perspective(4500px) translate(7rem) rotateY(31deg) scale(0.7);
+}
+#cover-feature-image3{
+	transform: perspective(4500px) translate(-7rem) rotateY(-31deg) scale(0.7);
+}
+
+.cover-feature-col {
+    display: flex;
+    width: 49%;
+    vertical-align: top;
+}
+
+#cover-feature-image {
+    text-align: center;
+}
+
+#cover-screenshots > div
+{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    width: 80%;
+    margin-left: 140px;
+}
+
+#cover-screenshots-content1 {
+    width: 40%;
+    margin-left: 90px;
+}
+
+#cover-screenshots-content2 {
+    width: 40%;
+    margin-right: 90px;
+}
+
+#cover-screenshots-content3 {
+    width: 40%;
+    margin-left: 90px;
+}
+.cover-heading h1 {
+    margin-top: 30px;
+	text-align: center;
+	color: #5780cd;
+    
+}
+
+.cover-heading p {
+    color: grey;
+    text-align: center;
+}
+
+
+.cover-screenshots-row {
+    margin-top: 90px;
+    vertical-align: top;
+    padding-left: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#cover-screenshots-image1 {
+    margin-right: 20px;
+    text-align: right;
+}
+
+#cover-screenshots-content1 {
+    text-align: justify;
+}
+
+#review-container {
+    display: flex;
+    margin-left: 8%;
+    padding-left: 5%;
+}
+
+.cover-review-content{
+	margin-top: 10px;
+	width: 80%;
+}
+
+.cover-review-content p{
+   font-weight: bold;
+}
+
+#cover-review {
+    padding-bottom: 50px;
+}
+#bottom{
+    background-image: url(../images/homebg.png);
+     display: flex;
+    justify-content: space-between;
+    height: 300px;
+   
+}
+
+#bottom-content h2{
+    color: white;
+    
+}
+
+#bottom-content {
+    margin-left: 15%;
+    color: white;
+    width: 30%;
+     margin-top: 50px;
+    
+}
+
+
+#bottom-image{
+    margin-right:10%;
+    margin-top: 3.6%;
+    
+
+}
+
+
+
+#footer{
+	padding: 10px;
+	background-color: #383A53;
+	display: flex;
+	justify-content: space-around;
+
+}
+
+#footer-title{
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+#footer-title
+#footer-links,
+#footer-widgets {
+    display: inline-block;
+    height: 30px;
+    width: 35%;
+    text-align: center;
+    
+     
+}
+
+#footer-links {
+    margin-left: 170px;
+}
+
+#footer-links a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    padding-left: 20px;
+    margin-top:   10px;
+
+}
+
+
+#footer-copyright{
+	padding: 10px;
+	background-color: #383A53;
+	display: flex;
+    flex-flow: wrap;
+	justify-content: space-around;
+    color: gray;
+
+}
+
