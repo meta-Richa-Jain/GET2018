@@ -1,0 +1,38 @@
+.nav-scroller{
+    position: relative;
+    height: 2.75rem;
+}
+
+.display{
+    font-size: 3rem;
+    font-style: italic;
+}
+
+.code-block{
+    font-size = 1rem;
+}
+
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}
+
+.btn{
+    padding: 3px;
+}
+
+.blog-heading{
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.button{
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-right:15px;
+    
+}
