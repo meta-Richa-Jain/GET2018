@@ -14,7 +14,6 @@ Stack.prototype.pop = function() {
  
     if (size) {
         deletedData = this._storage[size];
- 
         delete this._storage[size];
         this._size--;
  
