@@ -34,13 +34,11 @@ DoublyList.prototype.searchNodeAt = function (position) {
         message = {
             failure: 'Failure: non-existent node in this list.'
         };
-
-    // 1st use-case: an invalid position
+    
     if (length === 0 || position < 1 || position > length) {
         throw new Error(message.failure);
     }
 
-    // 2nd use-case: a valid position
     while (count < position) {
         currentNode = currentNode.next;
         count++;
@@ -60,28 +58,22 @@ DoublyList.prototype.remove = function (position) {
         nodeToDelete = null,
         deletedNode = null;
 
-    // 1st use-case: an invalid position
     if (length === 0 || position < 1 || position > length) {
         throw new Error(message.failure);
     }
 
-    // 2nd use-case: the first node is removed
     if (position === 1) {
         this.head = currentNode.next;
 
-        // 2nd use-case: there is a second node
         if (!this.head) {
             this.head.previous = null;
-            // 2nd use-case: there is no second node
         } else {
             this.tail = null;
         }
 
-        // 3rd use-case: the last node is removed
     } else if (position === this._length) {
         this.tail = this.tail.previous;
         this.tail.next = null;
-        // 4th use-case: a middle node is removed
     } else {
         while (count < position) {
             currentNode = currentNode.next;
