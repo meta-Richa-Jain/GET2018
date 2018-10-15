@@ -1,0 +1,20 @@
+[
+    {
+        "id" : "1",
+        "name": "Richa Jain",
+        "contact": "123456789",
+        "location": "Jaipur"
+        },
+    {
+        "id" : "2",
+        "name": "Arjita Marelay",
+        "contact": "123456789",
+        "location": "Shahdol"
+        },
+    {
+        "id" : "3",
+        "name": "Tanu Mittal",
+        "contact": "123456789",
+        "location": "Jaipur"
+        }
+]
