@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Dashboard</title>
+</head>
+<body>
+<div class="container">
+   <a th:href="@{resetPassword}">Reset Password</a><br>
+	<a th:href="@{'showProfile?code='}+${code}">Show Profile</a><br>
+	<a th:href="@{logout}">Logout</a>
+</div>
+</body>
+</html>
