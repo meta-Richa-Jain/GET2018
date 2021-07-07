@@ -1,0 +1,411 @@
+body {
+    margin: 0 ;
+    box-sizing: border-box;
+}
+
+#home {
+    background-image: url("../images/homebg.png");
+    background-size: 100% 100%;
+    height: 550px;
+
+}
+
+#cover1-buttons{
+    padding-top: 0px;
+}
+
+header
+{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: #6388fb;
+    z-index: 10;
+}
+
+.header {
+    display : flex;
+    justify-content: space-between;
+}
+
+#logo,
+nav,
+.widgets {
+    display: inline-block;
+    height: 50px;
+    width: 30%;
+    text-align: center;
+/*    padding: 12px;*/
+}
+
+#logo{
+    padding: 12px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+    font-size: 15px;
+
+}
+
+.widgets li{
+    display: inline-block;
+    
+}
+nav li {
+    display: inline-block;
+}
+
+#cover1 {
+    display: flex;
+    padding-top: 55px;
+}
+
+cover1-left {
+    display: flex;
+    text-align: center;
+/*    vertical-align: top;*/
+    justify-content: space-between;
+    
+}
+
+#cover1-buttons{
+    text-align: left;
+    padding-left: 120px;
+}
+
+#cover1-left,
+#cover1-image {
+        padding-top: 43px;
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+    vertical-align: top;
+
+}
+#cover1-heading{
+    padding-left: 100px;
+}
+
+#cover1-left h1 {
+
+    color: white;
+    text-align: center;
+    padding: 20px 0px 30px 20px;
+    font-size: 60px;
+    font-family: cursive;
+    text-align: left;
+    
+}
+
+.button {
+    text-decoration: none;
+    padding: 12px 20px 12px 20px;
+    height: 35px;
+    width: 40px;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: 300;
+    margin-left: 10px;
+
+}
+
+#download-link {
+    background-color: #fc6a42;
+}
+
+#features-link {
+    background-color: #4466c9;
+}
+
+
+#background-image-cover {
+    background-image: url("../images/bodybg.png");
+}
+
+#cover-feature-content  {
+    display: flex;
+    width: 80%;
+    vertical-align: top;
+    text-align: center;
+    margin-top:80px;
+    padding: 5x;
+    height: 300px;
+    margin-left: 140px;
+}
+
+.feature-content {
+    text-align: left;
+    margin-left: 8px;
+}
+
+.feature-content p{
+    color: #797979;
+}
+
+.feature-content h3{
+    font-size: 25px;
+}
+
+.cover-feature-image {
+    margin-top: 15px;
+}
+#cover-feature-image-slider{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+#cover-feature-image1{
+	transform: perspective(4500px) translate(7rem) rotateY(31deg) scale(0.7);
+}
+#cover-feature-image3{
+	transform: perspective(4500px) translate(-7rem) rotateY(-31deg) scale(0.7);
+}
+
+.cover-feature-col {
+    display: flex;
+    width: 45%;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+#cover-feature-image {
+    text-align: center;
+}
+
+
+.cover-screenshots > div
+{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    width: 90%;
+    margin-left: 120px;
+}
+
+.cover-screenshots-content1 {
+    width: 40%;
+    margin-left: 110px;
+    margin-top: 50px;
+    
+}
+
+.cover-screenshots-content2 {
+    width: 40%;
+    margin-left: 250px;
+    text-align: left;
+     margin-top: 50px;
+    
+}
+
+.cover-screenshots-row p{
+    color: #797979;
+    font-size: 25px;
+}
+
+.cover-screenshots-row h3{
+   font-family: sans-serif;
+    font-size: 32px;
+    
+}
+.cover-screenshots-content3 {
+    width: 40%;
+    margin-left: 90px;
+    text-align: left;
+     margin-top: 60px;
+}
+
+.cover-heading h1 {
+    margin-top: 30px;
+	text-align: center;
+	color: #648CFF;
+    font-size: 45px;
+    
+}
+
+.cover-heading p {
+    color: grey;
+    text-align: center;
+}
+
+
+
+.cover-screenshots-row {
+    margin-top: 90px;
+    vertical-align: top;
+/*    padding-left: 20px;*/
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    display: flex;
+}
+
+#cloudy-title{
+    z-index : 0;
+    position: absolute;
+    color: #d9d9d9;
+    font-size: 135px;
+    transform: rotate(90deg);
+    margin-top : 112px;
+    margin-left: 350px;
+    
+}
+
+#rainy-title{
+    z-index : 0;
+    position: absolute;
+    color: #d9d9d9;
+    font-size: 135px;
+    transform: rotate(90deg);
+    margin-top : 112px;
+    margin-left: 380px;
+    
+}
+
+#sunny-title{
+    z-index : 0;
+    position: absolute;
+    color: #d9d9d9;
+    font-size: 135px;
+    transform: rotate(90deg);
+    margin-top : 112px;
+    margin-left: 30px;
+    
+}
+
+
+.cover-screenshots-image1 img{
+/*    display: flex;*/
+    z-index: 2;
+    margin-left: 350px;
+    text-align: right;
+    position: relative;
+}
+
+.cover-screenshots-image2 img{
+/*    display: flex;*/
+    z-index: 2;
+    margin-right: 310px;
+    text-align: right;
+    position: relative;
+}
+
+.cover-screenshots-content1 {
+    text-align: justify;
+}
+
+#review-container {
+    display: flex;
+    margin-left: 60px;
+    padding-left: 80px;
+    margin-top: 50px;
+    
+}
+
+.inverted-left-icon{
+    color: #648cff;
+    font-size: 50px;
+    height: 30px;
+    display: block;
+   
+}
+
+.inverted-right-icon{
+    display: flex;
+    flex-direction: row-reverse;
+    color: #648cff;
+    font-size: 50px;
+    height: 30px;  
+}
+
+.cover-review-content{
+	margin-top: 20px;
+    margin-left: 30px;
+	width: 80%;
+   
+}
+
+.cover-review-content p{
+   font-weight: bold;
+     font-size: 23px;
+    margin-bottom: 10px;
+}
+
+#cover-review {
+    padding-bottom: 50px;
+    margin-top: 95px;
+    box-sizing: border-box;
+}
+
+#cover-download{
+    background-image: url(../images/homebg.png);
+     display: flex;
+    justify-content: space-between;
+    height: 400px;
+   
+}
+
+#download-content h2{
+    color: white;
+    font-size: 40px;
+    font-family: serif;
+}
+
+#download-content p{
+    color: white;
+    font-size: 25px;
+    font-family: inherit;
+    
+}
+
+#download-content {
+    margin-left: 165px;
+    color: white;
+    width: 32%;
+    margin-top: 40px;
+    
+}
+
+
+#bottom-image{
+    margin-right:120px;
+    margin-top: 100px;
+}
+
+#footer-logo{
+    padding-top: 5px;
+    margin-top: 18px;
+/*    margin-left: 30px;*/
+    margin-right: 40px;
+    display: inline-block;
+    height: 50px;
+    width: 27%;
+    text-align: center;
+    margin-left: -30px;
+}
+
+footer{
+    background-color: #383A53;
+}       
+#copyright{
+	padding: 10px;
+	background-color: #383A53;
+	display: flex;
+    flex-flow: wrap;
+	justify-content: space-around;
+    color: gray;
+    margin-bottom: 10px;
+
+}
+
+.cover{
+    margin: auto;
+    width : 1000px;
+}
+
